@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <div class="container p-4 my-3 d-flex flex-column align-items-center">
+        <div class="row">
+            <div class="col-md-6 text-start">
+                <h3 class="my-4">Hey, I'm Peter Brian Mwangi</h3>
+                <h1>Software Engineer</h1>
+                <a class="my-4 btn btn-outline-primary px-3" href="{% url 'contact' %}">Get In Touch</a>
+                <h5 class="mb-4">Passionate Software Engineer & Volunteer Educator from Kenya.</h5>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Dedicated to crafting robust and scalable solutions that drive innovation.</li>
+                    <li class="list-group-item">Over 2 years of industry experience.</li>
+                    <li class="list-group-item">Thrive on tackling complex technical challenges.</li>
+                    <li class="list-group-item">Specialize in both frontend and backend development.</li>
+                    <li class="list-group-item">Committed to continuous learning and staying updated with technology advancements.</li>
+                    <li class="list-group-item">Passionate about educating the next generation of developers through volunteer work.</li>
+                    <li class="list-group-item">Focus on delivering cutting-edge solutions that exceed client expectations.</li>
+                </ul>
+                <p class="mt-4 text-info fs-5 fw-bold fst-italic">
+                    Let's collaborate and build something incredible together!
+                </p>
+            </div>            
+            <div class="col-md-6 text-end d-flex align-items-center">
+                <img class="rounded w-100 shadow" src="{% static 'images/home.jpeg' %}" alt="home image">
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+    

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container p-4 my-3">
+        <h2 class="my-3">My Expertise</h2>
+        <div class="row">
+            {% for skill in skills %}
+                <div class="col-md-3 my-3">
+                    <div class="card m-3 border-info shadow h-100">
+                        <div class="card-img-top">
+                            <img class="p-1" src="{{ skill.icon.url }}" alt={{skill.title}}>
+                        </div>
+                        <hr>
+                        <div class="card-header" style="background-color: rgb(212, 253, 212);">
+                            {{ skill.title }}
+                        </div>
+                        <div class="card-body">
+                            {{ skill.description|safe }}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}
+    

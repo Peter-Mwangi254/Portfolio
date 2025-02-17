@@ -1,0 +1,35 @@
+{% load static %}
+<style>
+  ul li  a {
+        margin: 0 2rem;
+    }
+</style>
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'home' %}"><img width="70px" class="rounded-circle" src="{% static 'images/logo.jpeg' %}" alt="logo"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active fw-bold" aria-current="page" href="{% url 'home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bold" href="{% url 'about' %}">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bold" href="{% url 'projects' %}">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-outline-dark fw-bold" href="{% url 'posts' %}">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bold" href="{% url 'contact' %}">Contact</a>
+          </li>
+        </ul>    
+        <a class="btn btn-outline-danger" href="{% url 'resume' %}">Resume</a>
+      </div>
+    </div>
+  </nav>

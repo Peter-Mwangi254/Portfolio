@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <div class="container d-flex flex-column my-3">
+        <div>
+            <h3 class="text-danger fst-italic my-4 text-center">{{ post.title }}</h3>
+            <hr>
+            {{ post.body|safe }}
+        </div>
+        <div class="mt-4">
+            <a class="btn btn-dark" href="{% url 'posts' %}">
+                <i class="fa-solid fa-arrow-rotate-left"></i> &nbsp; Back</a>
+        </div>
+    </div>
+    
+{% endblock content %}
+
+    

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <div class="container d-flex flex-column mt-4 mb-5">
+        
+        {% for post in posts %}
+            <div class="border-top border-warning shadow my-3 py-2 px-3">
+                <h5><a class="text-decoration-none" href="{% url 'post_detail' post.slug %}">{{ post.title }}</a></h5>
+                <p class="fst-italic text-danger">Posted: {{ post.written_on }}</p>
+                <hr>
+                {{ post.body|safe|truncatewords:30 }}
+            </div>
+        {% endfor %}
+
+        <!-- Pagination -->
+    <div class="pagination">
+        <span class="step-links">
+            {% if posts.has_previous %}
+                <a href="?page=1">&laquo; First</a> &nbsp;
+                <a class="btn btn-outline-danger btn-sm" href="?page={{ posts.previous_page_number }}">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </a>
+            {% endif %}
+                &nbsp;
+            <span class="current">
+                Page {{ posts.number }} of {{ posts.paginator.num_pages }}.
+            </span>
+            &nbsp;
+
+            {% if posts.has_next %}
+                <a class="btn btn-outline-primary btn-sm" href="?page={{ posts.next_page_number }}">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                &nbsp;
+                <a href="?page={{ posts.paginator.num_pages }}">Last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+            
+    </div>
+{% endblock content %}
+    
